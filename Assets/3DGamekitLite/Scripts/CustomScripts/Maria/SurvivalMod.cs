@@ -9,6 +9,9 @@ public class SurvivalMod : MonoBehaviour
     
     [SerializeField] private bool thirsty;
     [SerializeField] private bool parched;
+
+    public int waterBottles = 0;
+    
     
     [SerializeField] private GameObject playerObject;
     
@@ -37,7 +40,16 @@ public class SurvivalMod : MonoBehaviour
             Debug.Log("Getting thirsty..");
             thirsty = true;
         }
-
+        
+        //if statement checks if thirstLevel is equal to, or lower than 15, to check for parched status
+        if (thirstLevel <= 15f && parched == false)
+        {
+            Debug.Log("Get some water now!!..");
+            parched = true;
+        }
+        
+        
+        
         //if statement checks if thirst is fully depleted to take player damage
         if (thirstLevel <= 0 && thirsty)
         {
@@ -55,19 +67,16 @@ public class SurvivalMod : MonoBehaviour
                 };
                 playerObject.GetComponent<Damageable>().ApplyDamage(msg);
                 Debug.Log("Damage by thirst!");
+                
                 timer = 10f;
             }
             
-            
         }
         
-        
-        
-        //if statement checks if thirstLevel is equal to, or lower than 15, to check for parched status
-        if (thirstLevel <= 15f && parched == false)
-        {
-            Debug.Log("Get some water now!!..");
-            parched = true;
-        }
+    }
+
+    public void AddWater()
+    {
+        Debug.Log("added random water");
     }
 }
