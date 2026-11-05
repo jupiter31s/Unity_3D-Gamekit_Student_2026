@@ -29,7 +29,7 @@ public class SurvivalMod : MonoBehaviour
     void Update()
     {
         /* Subtracting the current value of thirstLevel with thirstSpeed.
-         thistSpeed is normalised by using Time.deltaTime, so that it's frame rate independant. 
+         thirstSpeed is normalized by using Time.deltaTime, so that it's frame rate independant.
          MathClamp restricts the thirstLevel between its current max value and 0.
         */
         thirstLevel -= Mathf.Clamp(thirstSpeed*Time.deltaTime, 0, thirstLevel);
@@ -74,9 +74,9 @@ public class SurvivalMod : MonoBehaviour
         }
         
     }
-
     public void AddWater()
     {
         Debug.Log("added random water");
     }
+    
 }
