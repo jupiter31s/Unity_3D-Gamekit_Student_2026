@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Gamekit3D.GameCommands
 {
@@ -38,6 +39,9 @@ namespace Gamekit3D.GameCommands
 
         public override void PerformInteraction()
         {
+            // Door is being opened
+            Debug.Log("Is the door opem");
+            
             activate = true;
             if (OnStartCommand != null) OnStartCommand.Send();
         }
@@ -71,6 +75,7 @@ namespace Gamekit3D.GameCommands
         void LoopPingPong()
         {
             position = Mathf.PingPong(time, 1f);
+            
         }
 
         void LoopRepeat()
@@ -78,8 +83,10 @@ namespace Gamekit3D.GameCommands
             position = Mathf.Repeat(time, 1f);
         }
 
+        
         void LoopOnce()
         {
+            
             position = Mathf.Clamp01(time);
             if (position >= 1)
             {
