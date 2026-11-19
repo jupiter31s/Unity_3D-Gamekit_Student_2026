@@ -40,7 +40,7 @@ MonoBehaviour:
       Data3: -1494358081
       Data4: 1245518898
     Path: event:/Sound/SFX/Interactable/Moving Items/Door Switch
-  doorAudio:
+  doorEvent:
     Guid:
       Data1: -1341851537
       Data2: 1295832741
